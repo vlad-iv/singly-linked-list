@@ -6,9 +6,9 @@ package data.linkedlist;
  * @author Vladimir Ivanov (ivanov.vladimir.l@gmail.com)
  */
 public class SinglyLinkedList<E> {
-	static class Node<E> {
-		final E value;
-		Node<E> next;
+	public static class Node<E> {
+		public final E value;
+		public Node<E> next;
 
 		public Node(E value, Node<E> next) {
 			this.value = value;
@@ -16,9 +16,9 @@ public class SinglyLinkedList<E> {
 		}
 	}
 
-	Node<E> first;
-	Node<E> last;
-	int size = 0;
+	protected Node<E> first;
+	protected Node<E> last;
+	protected int size = 0;
 
 	public static void main(String[] args) {
 		final SinglyLinkedList<String> list = new SinglyLinkedList<>();
@@ -35,7 +35,7 @@ public class SinglyLinkedList<E> {
 		// 1, 3, 4
 	}
 
-	private void remove(int index) {
+	public void remove(int index) {
 		if (index < 0 || index >= size) {
 			return;
 		}
@@ -60,7 +60,7 @@ public class SinglyLinkedList<E> {
 		}
 	}
 
-	private void print() {
+	public void print() {
 		Node<E> cur = this.first;
 		while (cur != null) {
 			System.out.print(cur.value + ", ");
@@ -69,7 +69,7 @@ public class SinglyLinkedList<E> {
 		System.out.println();
 	}
 
-	private void addLast(E value) {
+	public void addLast(E value) {
 		final Node<E> node = new Node<>(value, null);
 		if (size == 0) {
 			size++;
