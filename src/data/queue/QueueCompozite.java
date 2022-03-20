@@ -7,9 +7,9 @@ import data.linkedlist.SinglyLinkedList;
  *
  * @author Vladimir Ivanov (ivanov.vladimir.l@gmail.com)
  */
-public class Queue<T> extends SinglyLinkedList<T> {
+public class QueueCompozite<T> {
 	public static void main(String[] args) {
-		final Queue<String> list = new Queue<>();
+		final QueueCompozite<String> list = new QueueCompozite<>();
 		list.queue("test1");
 		list.queue("test2");
 		list.queue("test3");
@@ -18,16 +18,21 @@ public class Queue<T> extends SinglyLinkedList<T> {
 		System.out.println(list.dequeue());
 		System.out.println(list.dequeue());
 		System.out.println(list.dequeue());
-		System.out.println(list.dequeue());
 		System.out.println(list.size());
 
 	}
 
+	public int size() {
+		return list.size();
+	}
+
+	SinglyLinkedList<T> list = new SinglyLinkedList<T>();
+
 	public void queue(T value) {
-		add(value);
+		list.add(value);
 	}
 
 	public T dequeue() {
-		return remove(size - 1);
+		return list.remove(list.size() - 1);
 	}
 }

@@ -18,7 +18,7 @@ public class SinglyLinkedList<T> {
 		}
 	}
 
-	private int size = 0;
+	protected int size = 0;
 	private Node<T> head;
 
 	public static void main(String[] args) {
@@ -40,7 +40,7 @@ public class SinglyLinkedList<T> {
 		System.out.println(list.size());
 	}
 
-	private T remove(int index) {
+	public T remove(int index) {
 		if (index < 0 || index >= size) {
 			return null;
 		}
@@ -60,7 +60,7 @@ public class SinglyLinkedList<T> {
 		return val.value;
 	}
 
-	private T get(int index) {
+	public T get(int index) {
 		if (index < 0 || index >= size) {
 			return null;
 		}
@@ -71,11 +71,11 @@ public class SinglyLinkedList<T> {
 		return val.value;
 	}
 
-	private int size() {
+	public int size() {
 		return size;
 	}
 
-	private void add(T value) {
+	public void add(T value) {
 		size++;
 		if (head == null) {
 			head = new Node<>(value, null);
