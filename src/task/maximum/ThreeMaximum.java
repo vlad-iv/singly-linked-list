@@ -12,7 +12,9 @@ import java.util.List;
  * 5, 10, 1, 0, 4, 6, 14
  *
  * Результат
- *
+ * 14
+ * 10
+ * 6
  *
  */
 public class ThreeMaximum {
