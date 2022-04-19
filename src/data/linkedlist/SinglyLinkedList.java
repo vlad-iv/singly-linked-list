@@ -12,10 +12,37 @@ public class SinglyLinkedList<T> { //  implements Iterable<T>
 		list.add("B");
 		list.add("C");
 		list.add("D");
+		list.add("E");
+		list.add("F");
+		list.add("J");
+		list.add("H");
 		System.out.println("2-" + list.get(2)); // получили C
 		System.out.println("0-" + list.get(0)); // получили C
+		list.remove(0); // удлили B
 		list.remove(1); // удлили B
 		System.out.println(list);
+		list.invert();
+		System.out.println(list);
+	}
+
+	public void invert() {
+		if (head == null) {
+			return;
+		}
+		Node<T> pred = null;
+		Node<T> node = head;
+		Node<T> next = head.next;
+		while (next != null) {
+			pred = node;
+			node = next;
+			next = node.next;
+
+			node.next = pred;
+		}
+		tail = head;
+		tail.next = null;
+
+		head = node;
 	}
 
 	static class Node<T> {
