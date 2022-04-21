@@ -38,6 +38,8 @@ public class CountingSymbolInString {
 
     }
 
+    //Алг.    O(n)
+    //Память. O(1)
     private static int countingCharInString(String input, char chToCount) {
         int count = 0;
 
@@ -48,5 +50,5 @@ public class CountingSymbolInString {
         }
         return count;
     }
-    
+
 }
